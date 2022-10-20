@@ -1,3 +1,4 @@
+// Colors
 $color-mainBackground: hsl(217, 54%, 11%);
 $color-cardBackground: hsl(216,50%,16%);
 $color-line: hsl(125, 32%, 27%);
@@ -12,16 +13,15 @@ $color-cyan: hsl(178,100%,50%);
     margin:0;
     padding:0;
 }
-
 main{
     background-color: $color-mainBackground;
     color: $color-softBlue;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 .card{
     padding: 1.5rem;
     background-color: $color-cardBackground;
@@ -29,11 +29,31 @@ main{
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
-    .imagen{
-        border-radius: 1rem;
-        &:hover{
-            color: $color-cyan;
-            cursor: pointer;
+    .card-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .img-eq{
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+        .cyan-layer{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: $color-cyan;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            &:hover{
+                opacity: 0.75;
+                cursor: pointer;
+            }    
         }
     }
     .title{
@@ -98,4 +118,3 @@ main{
         }
     }
 }
-
